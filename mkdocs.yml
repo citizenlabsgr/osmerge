@@ -1,0 +1,13 @@
+site_name: OSMerge
+site_description: Merges custom data sets with OpenStreetMap polygons.
+site_author: Citizen Labs
+repo_url: https://github.com/citizenlabsgr/osmerge
+
+theme: readthedocs
+
+pages:
+- Home: index.md
+- About:
+  - Release Notes: about/changelog.md
+  - Contributing: about/contributing.md
+  - License: about/license.md
