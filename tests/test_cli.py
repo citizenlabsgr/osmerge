@@ -1,19 +1,16 @@
-"""Sample integration test module."""
-# pylint: disable=no-self-use,missing-docstring
+# pylint: disable=unused-variable,expression-not-assigned
 
-import unittest
-
+from expecter import expect
 from click.testing import CliRunner
 
 from osmerge.cli import main
 
 
-class TestOsmerge(unittest.TestCase):
-    """Sample integration test class."""
+def describe_cli():
 
-    def test_conversion(self):
+    def it_can_be_called_without_a_command():
         runner = CliRunner()
-        result = runner.invoke(main, ['42'])
 
-        self.assertEqual(result.exit_code, 0)
-        self.assertEqual(result.output, "12.80165\n")
+        result = runner.invoke(main)
+
+        expect(result.exit_code) == 0

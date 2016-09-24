@@ -53,7 +53,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
 
     entry_points={'console_scripts': [
-        'osmerge-cli = osmerge.cli:main',
+        'osmerge = osmerge.cli:main',
     ]},
 
     long_description=read_descriptions(),
