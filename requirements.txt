@@ -1,4 +1,9 @@
-click == 6.6
+# Interfaces
+click ~= 6.6
 
-osmapi == 0.4.1
-shapely == 1.5.2
+# Storage
+YORM ~= 1.0.1
+
+# Mapping
+osmapi ~= 0.4.1
+shapely ~= 1.5.2
