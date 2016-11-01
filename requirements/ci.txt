@@ -9,6 +9,7 @@ pytest-describe
 pytest-expecter
 pytest-cov
 pytest-random
+scripttest == 1.3
 
 # Coverage
 coverage

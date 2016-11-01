@@ -2,11 +2,14 @@ import logging
 
 import click
 
+from . import VERSION
+
 
 log = logging.getLogger(__name__)
 
 
 @click.group()
+@click.version_option(message=VERSION)
 def main():
     logging.basicConfig(level=logging.INFO)
     logging.getLogger('yorm').setLevel(logging.WARNING)
