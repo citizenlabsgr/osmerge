@@ -33,3 +33,21 @@ def describe_cli():
 
         expect(cmd.returncode) == 0
         expect(cmd.stdout or cmd.stderr).contains("OSMerge v0.")
+
+    def describe_new():
+
+        def it_generates_a_sample_project(cli):
+            cmd = cli('new')
+
+            expect(cmd.returncode) == 0
+            expect(sorted(cmd.files_created.keys())) == [
+                ".gitignore",  # ignore /tmp
+                "docs/index.html",  # example HTML file using `osmerge.geojson`
+                "docs/osmerge.geojson",  # copied from `tmp/merged.geojson`
+                "osmerge.csv",  # data set
+                "osmerge.yml",  # config file
+                "tmp/base.json",  # downloaded OSM data
+                "tmp/filtered.json",  # reduced data based on config filters
+                "tmp/merged.geojson "  # above file converted to GeoJSON
+                "tmp/merged.json",  # above file with added fields
+            ]
