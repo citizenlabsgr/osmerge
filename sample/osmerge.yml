@@ -1,16 +1,10 @@
 boundaries:
-  - longitue:
-      minimum: -85.75284790217363
-      maximum: -85.5676630879733
-    latitude:
-      minimum: 42.882669706849875
-      maximum: 43.03002974711799
-  - longitue:
-      minimum: -85.842360
-      maximum: -85.822018
-    latitude:
-      minimum: 42.970904
-      maximum: 42.988047
+- latitude:
+    minimum: 42.882669706849875
+    maximum: 43.03002974711799
+  longitude:
+    minimum: -85.75284790217363
+    maximum: -85.5676630879733
 filters:
   tags:
-    - leisure: park
+  - leasure: park

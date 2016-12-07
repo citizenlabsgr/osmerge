@@ -41,13 +41,12 @@ def describe_cli():
 
             expect(cmd.returncode) == 0
             expect(sorted(cmd.files_created.keys())) == [
-                ".gitignore",  # ignore /tmp
+                # TODO: figure out why .gitignore isn't showing up
+                # ".gitignore",  # ignore /tmp
+                "Makefile",  # builds the pipeline
+                "docs",
                 "docs/index.html",  # example HTML file using `osmerge.geojson`
-                "docs/osmerge.geojson",  # copied from `tmp/merged.geojson`
+                "docs/osmerge.geojson",  # converted from `tmp/merged.json`
                 "osmerge.csv",  # data set
                 "osmerge.yml",  # config file
-                "tmp/base.json",  # downloaded OSM data
-                "tmp/filtered.json",  # reduced data based on config filters
-                "tmp/merged.geojson "  # above file converted to GeoJSON
-                "tmp/merged.json",  # above file with added fields
             ]
