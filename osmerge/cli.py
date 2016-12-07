@@ -3,6 +3,7 @@ import logging
 import click
 
 from . import VERSION
+from .models import Project, Config, Data
 
 
 log = logging.getLogger(__name__)
@@ -17,9 +18,9 @@ def main():
 
 @main.command()
 def new():
-    # TODO: this logic is only temporary to test the Config model
-    from .models import Config
+    Project.generate()
     Config.generate_example()
+    Data.generate_example()
 
 
 if __name__ == '__main__':

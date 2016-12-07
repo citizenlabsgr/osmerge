@@ -33,3 +33,20 @@ def describe_cli():
 
         expect(cmd.returncode) == 0
         expect(cmd.stdout or cmd.stderr).contains("OSMerge v0.")
+
+    def describe_new():
+
+        def it_generates_a_sample_project(cli):
+            cmd = cli('new')
+
+            expect(cmd.returncode) == 0
+            expect(sorted(cmd.files_created.keys())) == [
+                # TODO: figure out why .gitignore isn't showing up
+                # ".gitignore",  # ignore /tmp
+                "Makefile",  # builds the pipeline
+                "docs",
+                "docs/index.html",  # example HTML file using `osmerge.geojson`
+                "docs/osmerge.geojson",  # converted from `tmp/merged.json`
+                "osmerge.csv",  # data set
+                "osmerge.yml",  # config file
+            ]

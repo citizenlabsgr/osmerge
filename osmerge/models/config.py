@@ -48,10 +48,14 @@ class Config:
         """Create an example configuration to be manually edited."""
         config = cls()
 
-        config.boundaries.append(BoundingBox(
-            CoordinateRange(42.882669706849875, 43.03002974711799),
-            CoordinateRange(-85.75284790217363, -85.5676630879733),
-        ))
-        config.filters.tags.append(dict(leasure='park'))
+        config.boundaries = [
+            BoundingBox(
+                CoordinateRange(42.882669706849875, 43.03002974711799),
+                CoordinateRange(-85.75284790217363, -85.5676630879733),
+            ),
+        ]
+        config.filters.tags = [
+            dict(leasure='park'),
+        ]
 
         return config
