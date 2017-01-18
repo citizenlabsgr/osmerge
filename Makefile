@@ -80,8 +80,8 @@ run: install
 
 .PHONY: doctor
 doctor:  ## Confirm system dependencies are available
-	@ $(SYS_PYTHON) -m pip install verchew > /dev/null
-	@ $(SYS_PYTHON) -m verchew
+	$(SYS_PYTHON) -m pip install verchew
+	$(SYS_PYTHON) -m verchew
 
 # PROJECT DEPENDENCIES #########################################################
 
