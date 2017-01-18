@@ -35,7 +35,7 @@ tmp/base.json: osmerge.yml
 clean:
     rm -rf tmp
 
-"""
+""".replace(' ' * 4, '\t')
 
 INDEX = """
 
