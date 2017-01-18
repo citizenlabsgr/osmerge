@@ -5,11 +5,14 @@ python:
 cache:
   pip: true
   directories:
-    - env
+    - ~/virtualenv/python3.5.*
 
 env:
   global:
     - RANDOM_SEED=0
+
+before_install:
+  - make doctor
 
 install:
   - make install
@@ -26,4 +29,4 @@ after_success:
 notifications:
   email:
     on_success: never
-    on_failure: change
+    on_failure: never

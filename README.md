@@ -2,7 +2,7 @@ Unix: [![Unix Build Status](http://img.shields.io/travis/citizenlabsgr/osmerge/d
 
 # Overview
 
-OSMerge ("OSM Merge"), combines custom data sets with OpenStreetMap polygons.
+OSMerge combines custom data sets with OpenStreetMap polygons.
 
 # Setup
 
