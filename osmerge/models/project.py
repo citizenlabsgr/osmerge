@@ -1,3 +1,5 @@
+import os
+import logging
 from pathlib import Path
 
 
@@ -49,12 +51,18 @@ GEOJSON = """
 
 """
 
+log = logging.getLogger(__name__)
+
 
 class Project(object):
 
     @classmethod
     def generate(cls):
         root = Path.cwd()
+
+        if len(os.listdir()) >= 3:
+            log.warning("A project already exists: %s", root)
+            return False
 
         with root.joinpath(".gitignore").open('w') as stream:
             stream.write(GITIGNORE.strip() + '\n')
@@ -68,3 +76,5 @@ class Project(object):
             stream.write(INDEX.strip() + '\n')
         with docs.joinpath("osmerge.geojson").open('w') as stream:
             stream.write(GEOJSON.strip() + '\n')
+
+        return True

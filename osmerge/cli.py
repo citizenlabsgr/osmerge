@@ -24,9 +24,9 @@ def main():
 @click.option('-r', '--root', type=Path, default=Path.cwd)
 def new(root):
     _enter(root)
-    Project.generate()
-    Config.generate_example()
-    Data.generate_example()
+    if Project.generate():
+        Config.generate_example()
+        Data.generate_example()
 
 
 def _enter(path):

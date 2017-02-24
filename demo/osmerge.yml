@@ -7,4 +7,4 @@ boundaries:
     maximum: -85.5676630879733
 filters:
   tags:
-  - leasure: park
+  - building: yes
