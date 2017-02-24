@@ -76,6 +76,14 @@ watch: install .clean-test ## Continuously run all CI tasks when files chanage
 run: install
 	$(PYTHON) $(PACKAGE)/__main__.py
 
+.PHONY: demo
+demo: install
+	$(BIN)/osmerge new --root=demo
+	# TODO: support these commands:
+	# $(BIN)/osmerge build --root=demo
+	# $(BIN)/osmerge update --root=demo
+	# $(BIN)/osmerge build --root=demo
+
 # SYSTEM DEPENDENCIES ##########################################################
 
 .PHONY: doctor

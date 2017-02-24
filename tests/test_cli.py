@@ -50,3 +50,9 @@ def describe_cli():
                 "osmerge.csv",  # data set
                 "osmerge.yml",  # config file
             ]
+
+        def it_can_be_run_from_a_custom_root(cli):
+            cmd = cli('new', '--root=foobar')
+
+            expect(cmd.returncode) == 0
+            expect(cmd.files_created).contains("foobar/docs/index.html")
